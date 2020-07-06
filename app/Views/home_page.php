@@ -6,18 +6,9 @@
 	<meta name="description" content="The small framework with powerful features">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		$("#myInput").on("keyup", function() {
-			var value = $(this).val().toLowerCase();
-			$("#myList li").filter(function() {
-			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
-		});
-		});
-	</script>
+	<link rel="stylesheet" href="/vendors/bootstrap.min-4.1.3.css">
+
+
 		
 	
 	
@@ -258,6 +249,7 @@
 	<pre><code>app/Controllers/Home.php</code></pre>
 
 	<button class="btn btn-info"> yosi's button</button>
+
 	<!-- cheacking -->
 	<h2>Filterable List</h2>
 	<p>Type something in the input field to search the list for specific items:</p>  
@@ -265,10 +257,10 @@
 	<br>
 
 	<ul id="myList">
-	<li>First item</li>
-	<li>Second item</li>
-	<li>Third item</li>
-	<li>Fourth</li>
+		<li>First item</li>
+		<li>Second item</li>
+		<li>Third item</li>
+		<li>Fourth</li>
 	</ul>
 	<!-- end -->
 </section>
@@ -345,10 +337,20 @@
 		}
 	}
 </script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="/vendors/jquery-3.5.1.min.js"></script>
+<script src="/vendors/popper-1.14.3.min.js"></script>
+<script src="/vendors/bootstrap.min-4.1.3.js"></script>
+<script>
+	$(document).ready(function(){
+	$("#myInput").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#myList li").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+	});
+</script>
 <!-- -->
 
 </body>
