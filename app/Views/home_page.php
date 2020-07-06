@@ -7,20 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		$("#myInput").on("keyup", function() {
-			var value = $(this).val().toLowerCase();
-			$("#myList li").filter(function() {
-			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
-		});
-		});
-	</script>
-		
-	
-	
 	<!-- STYLES -->
 
 	<style {csp-style-nonce}>
@@ -256,21 +242,7 @@
 	<p>The corresponding controller for this page can be found at:</p>
 
 	<pre><code>app/Controllers/Home.php</code></pre>
-
-	<button class="btn btn-info"> yosi's button</button>
-	<!-- cheacking -->
-	<h2>Filterable List</h2>
-	<p>Type something in the input field to search the list for specific items:</p>  
-	<input id="myInput" type="text" placeholder="Search..">
-	<br>
-
-	<ul id="myList">
-	<li>First item</li>
-	<li>Second item</li>
-	<li>Third item</li>
-	<li>Fourth</li>
-	</ul>
-	<!-- end -->
+		
 </section>
 
 <div class="further">
