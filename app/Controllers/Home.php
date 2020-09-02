@@ -4,8 +4,10 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('home_page');
+		return view('list_page');
 	}
+	
+
 
 	//--------------------------------------------------------------------
 

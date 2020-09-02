@@ -30,7 +30,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
+
+$routes->get('/', 'Phonebook::index');
+$routes->match(['get','post'],'/new', 'Phonebook::new');
+$routes->get('/show/(:num)', 'Phonebook::show/$1');
+$routes->get('/edit/(:num)', 'Phonebook::edit/$1');
+// $routes->put('/update', 'Phonebook::uodate');
+// $routes->delete('/delete', 'Phonebook::delete');
 
 /**
  * --------------------------------------------------------------------
