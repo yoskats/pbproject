@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
 
+use App\Models\ContactsModel;
+
 class Phonebook extends BaseController
 {
 	public function index()
@@ -15,29 +17,62 @@ class Phonebook extends BaseController
 	public function new()
 	{
 		$data = [];
-		
-		helper('form');
+		$name = $phone_num = $email = $bday = " ";
+
+
+
+		helper(['form']);
+
+		// if($_POST){
+		// 	echo '<pre>';
+		// 	 print_r($_POST);
+		// 	echo '<pre>';
+ 
+		// }
+
+
+
+
+
 
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'name' => 'required|min_length[5]|max_length[20]',
-				'phone_num' => 'required|min_length[9]|max_length[20]',
-				'email' => 'required|min_length[10]|max_length[50]|valid_email|is_unique[user.email]',
+				'phone' => 'required|min_length[9]|max_length[20]',
+				'email' => 'required|valid_email',
 				'bday' => 'required|min_length[10]|max_length[20]',
 			];
+
 			
-			if (! $this->validate($rules)) {
-				$data['validation'] = $this->validator;
+			if ($this->validate($rules)) {
+				// if the validtion is past then go to database insertion
+
+				$model = new ContactsModel();
+				$model->save($_POST);
+
+				return redirect()->to('/phonebook/index');
+
+
+
+				// $data['validation'] = $this->validator;
 
 			} else {
-				// return redirect()->route('Phonebook::new');
-				return view('new_page');
+				 $data['validation'] = $this->validator;
 
+				 
+				// return redirect()->route('Phonebook::new');
 			}
+			
+			
 		}
 		
 
 		return view('new_page' , $data);
+	}
+	
+	function success()
+	{
+		return 'the form validation past successfully';
 	}
 
 

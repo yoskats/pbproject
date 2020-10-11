@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class AddUser extends Migration
+class AddContacts extends Migration
 {
 
         public function up()
@@ -19,8 +19,8 @@ class AddUser extends Migration
                                 'constraint'     => 100,
                         ],
                         'phone'          => [
-                                'type'           => 'INT',
-                                'constraint'     => 10,
+                                'type'           => 'VARCHAR',
+                                'constraint'     => 100,
                         ],
                         'email' => [
                                 'type'           => 'VARCHAR',
@@ -31,11 +31,11 @@ class AddUser extends Migration
                         ],
                 ]);
                 $this->forge->addKey('id', true);
-                $this->forge->createTable('user');
+                $this->forge->createTable('contacts');
         }
 
         public function down()
         {
-                $this->forge->dropTable('user');
+                $this->forge->dropTable('contacts');
         }
 }

@@ -47,6 +47,12 @@
 
 
     <div class="col-12 col-md-8 offset-md-2 pt-5 pb-5">
+        <?php if (isset($validation)) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $validation->listErrors() ?>
+            </div>
+
+        <?php endif; ?>
         <form class="users_num" action="/new" method="post" style="padding-left: 200px; padding-right: 200px;">
             <div class="row pt-5">
                 <div class="col">
@@ -65,7 +71,7 @@
                             <label class="h3">Phone number</label>
                         </div>
                         <div class="col" style="padding-bottom: 30px;">
-                            <input type="text" class="form-control h3" name="phone_num" id="phone_num" placeholder="Mobile phone number" value="<?= set_value('phone_num') ?>">
+                            <input type="tel" class="form-control h3" name="phone" id="phone_num" placeholder="Mobile phone number" value="<?= set_value('phone_num') ?>">
                         </div>
                     </div>
 
@@ -83,34 +89,21 @@
                             <label class="h3">Birthday Date</label>
                         </div>
                         <div class="col" style="padding-bottom: 30px;">
-                            <input type="calender" class="form-control h3" name="bday" id="bday" placeholder="01.01.2020" value="<?= set_value('bday') ?>">
+                            <input type="date" class="form-control h3" name="bday" id="bday" placeholder="01.01.2020" value="<?= set_value('bday') ?>">
                         </div>
                     </div>
 
-                    <?php if (isset($validation)) : ?>
-                        <div class="col-12">
-                            <div class="alert alert-danger" role="alert">
-                                <?= $validation->listErrors() ?>
-                            </div>
-                        </div>
-                    <?php else : ?>
-                        <div class="col-12 pt-5" style="padding-left: 0px; padding-right: 0px;">
-                            <div class="alert alert-success" role="alert">
-                                <?php echo "new contact created sucssesfully" ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                 </div>
             </div>
+
+            <div class="col-12 col-md-8 offset-md-2 mr-4 pb-5">
+                <div class="button_container text-center pb-5">
+                    <button type="submit" class="btn btn-danger">Save</button>
+                    <button type="rest" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+
         </form>
-    </div>
-
-
-    <div class="col-12 col-md-8 offset-md-2 mr-4 pb-5">
-        <div class=" button_container text-center pb-5">
-            <button type="save_btn" name="save_btn btn-danger" class="btn btn-danger">Save</button>
-            <button type="cancel_btn" name="cancel_btn" class="btn btn-danger">Cancel</button>
-        </div>
     </div>
 
 
@@ -137,3 +130,15 @@
 </body>
 
 </html>
+
+
+
+
+
+
+    <!-- <div class="col-12 pt-5" style="padding-left: 0px; padding-right: 0px;">
+        <div class="alert alert-success" role="alert">
+             echo "new contact created sucssesfully" ?>
+        </div>
+    </div>
+ endif; ?> --> 

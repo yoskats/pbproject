@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ItemModel extends Model
+class ContactsModel extends Model
 {
     protected $table      = 'contacts';
-    protected $primaryKey = 'contact_id';
+    protected $primaryKey = 'contacts_id';
 
     // protected $returnType     = 'array';
     // protected $useSoftDeletes = true;
