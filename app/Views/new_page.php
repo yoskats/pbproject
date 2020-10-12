@@ -47,12 +47,13 @@
 
 
     <div class="col-12 col-md-8 offset-md-2 pt-5 pb-5">
-        <?php if (isset($validation)) : ?>
-            <div class="alert alert-danger" role="alert">
-                <?= $validation->listErrors() ?>
+        <?php if (!empty($errors)) : ?>
+            <div class="alert alert-danger">
+                <?php foreach ($errors as $field => $error) : ?>
+                    <p><?= $error ?></p>
+                <?php endforeach ?>
             </div>
-
-        <?php endif; ?>
+        <?php endif ?>
         <form class="users_num" action="/new" method="post" style="padding-left: 200px; padding-right: 200px;">
             <div class="row pt-5">
                 <div class="col">
@@ -136,9 +137,9 @@
 
 
 
-    <!-- <div class="col-12 pt-5" style="padding-left: 0px; padding-right: 0px;">
+<!-- <div class="col-12 pt-5" style="padding-left: 0px; padding-right: 0px;">
         <div class="alert alert-success" role="alert">
              echo "new contact created sucssesfully" ?>
         </div>
     </div>
- endif; ?> --> 
+ endif; ?> -->

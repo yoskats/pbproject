@@ -120,11 +120,11 @@
 						</td>
 					</tr>
 					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">6</td>
-						<td class="h4 text-center">Yosi kats</td>
-						<td class="h4 text-center">0547829983</td>
-						<td class="h4 text-center">Yosi@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
+						<td class="h4 text-center"><? $id ?></td>
+						<td class="h4 text-center"><? $name ?></td>
+						<td class="h4 text-center"><? $email ?></td>
+						<td class="h4 text-center"><? $bday ?></td>
+						<td class="h4 text-center"><? $bday ?></td>
 						<td class="h4 text-center">
 							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
 							<button type="button" class="btn btn-danger">Delete</button>
