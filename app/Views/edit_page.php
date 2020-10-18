@@ -30,31 +30,34 @@
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
                     </li>
-                    <li class="nav-item active ml-4">
-                        <a class="nav-link  text-white" href="/show/1">Show a item</a>
-                    </li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
+    <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5">
         <div class="bg-secondary">
             <h1 class="text-light pt-5 pb-5" style="text-align: center;">edit Page</h1>
-            <h2 class="text-light pt-5 pb-5" style="text-align: center;">Phonebook - edit Items of users: 1</h2>
+            <h2 class="text-light pt-5 pb-5" style="text-align: center;">Phonebook - edit Items of users: <?php echo $contact['id'] ?> </h2>
         </div>
     </div>
 
-    <div class="col-12 col-md-8 offset-md-2 mr-4 pb-5">
-        <div class="button_container text-center" style="padding-top: 30px;">
-            <button type="button" class="btn btn-danger">Save</button>
-            <button type="button" class="btn btn-danger ">Cancel</button>
-        </div>
 
-    </div>
-
-    <div class="col-12 pt-5 pb-5 col-md-8 offset-md-2 mr-4">
-        <form class="col-12 col-md-8 offset-md-2 pb-5">
+    <div class="col-12 pb-5 col-md-8 offset-md-2 mr-4">
+        <form class="col-12 col-md-8 offset-md-2 pb-5" action="/edit/<?php echo $contact['id']?>" method="post">
+        <?php if (!empty($errors)) : ?>
+            <div class="alert alert-danger">
+                <?php foreach ($errors as $field => $error) : ?>
+                    <p><?= $error ?></p>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+            <div class="pb-5">
+                <div class="button_container text-center" style="padding-top: 30px;">
+                    <button type="submit" class="btn btn-danger">Save</button>
+                    <a type="button" href="/" class="btn btn-danger ">Cancel</a>
+                </div>
+            </div>
             <div class="row pb-5">
                 <div class="col pb-5">
 
@@ -63,7 +66,7 @@
                             <label class="h3">Full name</label>
                         </div>
                         <div class="col">
-                            <input type="fullname" class="form-control h3" id="exampleInputEmail1" value="John Doe">
+                            <input type="text" class="form-control h3" name="name" id="exampleInputEmail1" value="<?php echo $contact['name'] ?>">
                         </div>
                     </div>
 
@@ -72,7 +75,7 @@
                             <label class="h3">Phone number</label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control h3" id="exampleInputEmail1" value="0504325576">
+                            <input type="tel" class="form-control h3" name="phone" id="exampleInputEmail1" value="<?php echo $contact['phone'] ?>">
                         </div>
                     </div>
 
@@ -81,7 +84,7 @@
                             <label class="h3">Email</label>
                         </div>
                         <div class="col">
-                            <input type="email" class="form-control h3" id="exampleInputEmail1" aria-describedby="emailHelp" value="John@example.com">
+                            <input type="text" class="form-control h3" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $contact['email'] ?>">
                         </div>
                     </div>
 
@@ -90,7 +93,7 @@
                             <label class="h3">Birthday</label>
                         </div>
                         <div class="col">
-                            <input type="calender" class="form-control h3" id="exampleInputEmail1" value="15.5.88">
+                            <input type="date" class="form-control h3" name="bday" id="exampleInputEmail1" value="<?php echo $contact['bday'] ?>">
                         </div>
                     </div>
                 </div>

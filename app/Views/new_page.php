@@ -28,9 +28,6 @@
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
                     </li>
-                    <li class="nav-item active ml-4">
-                        <a class="nav-link  text-white" href="/show/1">Show a item</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -41,7 +38,7 @@
     <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
         <div class="bg-secondary">
             <h1 class="text-light pt-5 pb-5 text-center">Add New Contact</h1>
-            <h2 class="text-light pt-5 pb-5 text-center">Phonebook - add new contact: 1</h2>
+            <h2 class="text-light pt-5 pb-5 text-center">add new contact to you'r Phonebook</h2>
         </div>
     </div>
 
@@ -100,7 +97,7 @@
             <div class="col-12 col-md-8 offset-md-2 mr-4 pb-5">
                 <div class="button_container text-center pb-5">
                     <button type="submit" class="btn btn-danger">Save</button>
-                    <button type="rest" class="btn btn-danger">Cancel</button>
+                    <a type="button" href="/" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
 

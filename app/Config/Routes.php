@@ -33,9 +33,11 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 
 $routes->get('/', 'Phonebook::index');
+$routes->post('/delete/(:num)', 'Phonebook::delete/$1');
 $routes->match(['get','post'],'/new', 'Phonebook::new');
 $routes->get('/show/(:num)', 'Phonebook::show/$1');
-$routes->get('/edit/(:num)', 'Phonebook::edit/$1');
+$routes->match(['get', 'post'],'/edit/(:num)', 'Phonebook::edit/$1');
+
 // $routes->put('/update', 'Phonebook::uodate');
 // $routes->delete('/delete', 'Phonebook::delete');
 

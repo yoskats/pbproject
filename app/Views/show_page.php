@@ -30,9 +30,6 @@
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
                     </li>
-                    <li class="nav-item active ml-4">
-                        <a class="nav-link  text-white" href="/show/1">Show a item</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -41,7 +38,7 @@
     <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
         <div class="bg-secondary">
             <h1 class="text-light pt-5 pb-5" style="text-align: center;">Item Page</h1>
-            <h2 class="pt-5 pb-5 text-light" style="text-align: center;">Phonebook - Item of user: <?php echo $contact_id ?> </h2>
+            <h2 class="pt-5 pb-5 text-light" style="text-align: center;">Phonebook - Item of user: <?php echo $contact['id'] ?> </h2>
         </div>
     </div>
 
@@ -62,7 +59,7 @@
                             <label class="h3">Full name</label>
                         </div>
                         <div class="col p-0 ml-5 border-right border-danger">
-                            <p class="h3 text-muted">John Doe</p>
+                            <p class="h3 text-muted"><?php echo $contact['name'] ?></p>
                         </div>
                     </div>
 
@@ -71,16 +68,16 @@
                             <label class="h3">Phone number</label>
                         </div>
                         <div class="col p-0 ml-5 border-right border-danger">
-                            <p class="h3 text-muted">0504325576</p>
+                            <p class="h3 text-muted"><?php echo $contact['phone'] ?></p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col pl-5 border-left border-right border-danger">
-                            <label class="h3">Email</label>
+                            <label class="h3"><?php echo $contact['email'] ?></label>
                         </div>
                         <div class="col p-0 ml-5 border-right border-danger">
-                            <p class="h3 text-muted">John@example.com</p>
+                            <p class="h3 text-muted"><?php echo $contact['email'] ?></p>
                         </div>
                     </div>
 
@@ -89,7 +86,7 @@
                             <label class="h3">Birthday</label>
                         </div>
                         <div class="col p-0 ml-5 border-right border-danger">
-                            <p class="h3 text-muted">15.5.88</p>
+                            <p class="h3 text-muted"><?php echo $contact['bday'] ?></p>
                         </div>
                     </div>
                 </div>

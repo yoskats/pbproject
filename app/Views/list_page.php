@@ -29,14 +29,11 @@
 					<li class="nav-item active ml-4">
 						<a class="nav-link  text-white" href="/new">Add new contact</a>
 					</li>
-					<li class="nav-item active ml-4">
-						<a class="nav-link  text-white" href="/show/1">Show a item</a>
-					</li>
 				</ul>
 			</div>
 		</nav>
 	</div>
- 
+
 	<div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
 		<div class="bg-secondary">
 			<h1 class="text-light pt-5 pb-5 text-center">Phonebook List</h1>
@@ -52,7 +49,7 @@
 
 	<div class="table_1 col-12 col-md-8 offset-md-2 pt-5 pb-5">
 		<div class="table_container pb-5">
-			<table class="table contacts" action="/new" metho="post">
+			<table class="table contacts">
 				<thead>
 					<tr class="bg-dark text-white">
 						<th class="id h3 text-center">#</th>
@@ -64,76 +61,25 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">1</td>
-						<td class="h4 text-center">John Doe</td>
-						<td class="h4 text-center">0504325576</td>
-						<td class="h4 text-center">john@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">2</td>
-						<td class="h4 text-center">Mary Moe</td>
-						<td class="h4 text-center">0504786637</td>
-						<td class="h4 text-center">mary@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">3</td>
-						<td class="h4 text-center">July Dooley</td>
-						<td class="h4 text-center">0547829983</td>
-						<td class="h4 text-center">july@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">4</td>
-						<td class="h4 text-center">Leeya Goldman</td>
-						<td class="h4 text-center">0547829983</td>
-						<td class="h4 text-center">Leeya@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center">5</td>
-						<td class="h4 text-center">Idan Goldman</td>
-						<td class="h4 text-center">0547829983</td>
-						<td class="h4 text-center">Idan@example.com</td>
-						<td class="h4 text-center">15.5.88</td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
-					<tr class="bg-secondary text-white">
-						<td class="h4 text-center"><? $id ?></td>
-						<td class="h4 text-center"><? $name ?></td>
-						<td class="h4 text-center"><? $email ?></td>
-						<td class="h4 text-center"><? $bday ?></td>
-						<td class="h4 text-center"><? $bday ?></td>
-						<td class="h4 text-center">
-							<a type="edit" href="/edit/1" class="btn btn-danger">Edit</a>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</td>
-					</tr>
+					<?php foreach ($contacts as $contact) : ?>
+						<tr class="bg-secondary text-white">
+							<td class="h4 text-center"> <?php echo $contact['id'] ?> </td>
+							<td class="h4 text-center"><a href="show/<?php echo $contact['id'] ?>" class=" text-light"> <?php echo $contact['name'] ?> </a></td>
+							<td class="h4 text-center"> <?php echo $contact['phone'] ?> </td>
+							<td class="h4 text-center"> <?php echo $contact['email'] ?> </td>
+							<td class="h4 text-center"> <?php echo $contact['bday'] ?> </td>
+							<td class="h4 text-center">
+								<a type="edit" href="/edit/<?php echo $contact['id'] ?>" class="btn btn-danger">Edit</a>
+								<form style='display:inline;' action="/delete/<?php echo $contact['id'] ?>" method="post"> <button type="submit" class="btn btn-danger">Delete</button></form>
+							</td>
+						</tr>
+					<?php endforeach ?>
 				</tbody>
 			</table>
 		</div>
 	</div>
+
+
 
 	<!-- Footer -->
 	<div class="page-footer col-12 col-md-8 offset-md-2 pt-5 bg-dark">
@@ -141,9 +87,7 @@
 
 			<!-- Copyright -->
 			<div class="footer-copyright text-center py-3 text-white mb-5">© 2020 Copyright saved to : yosi@123code.co
-				<a class="text-danger text-center" href="/"> Yosi's Phonebook</a>
-			</div>
-			<!-- Copyright -->
+				<a class="text-danger text-center" href="/"> Yosi' s Phonebook</a> </div> <!-- Copyright -->
 
 		</footer>
 	</div>

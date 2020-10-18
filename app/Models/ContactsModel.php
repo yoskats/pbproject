@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ContactsModel extends Model
 {
     protected $table      = 'contacts';
-    protected $primaryKey = 'contacts_id';
+    protected $primaryKey = 'id';
 
     // protected $returnType     = 'array';
     // protected $useSoftDeletes = true;
@@ -28,11 +28,6 @@ class ContactsModel extends Model
         'email' => 'required|valid_email',
         'bday' => 'required|min_length[10]|max_length[20]',
      ];
-
-
-
-
-
 
     // protected $validationMessages = [];
     // protected $skipValidation     = false;
