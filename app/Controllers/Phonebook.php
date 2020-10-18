@@ -31,7 +31,6 @@ class Phonebook extends BaseController
 
 		return redirect()->to('/phonebook/index');
 		
-		// return view('list_page');
 
 	}
 
