@@ -7,9 +7,7 @@ class Phonebook extends BaseController
 	public function index()
 	{
 		helper('form');
-		
 		$ContactsModel = new ContactsModel();
-
 		$data = [
 			'contacts' => $ContactsModel->findAll()
 		];
@@ -22,37 +20,25 @@ class Phonebook extends BaseController
 		return view('list_page', $data);
 	}
 	public function delete($id){
-
 		$ContactsModel = new ContactsModel();
-
 		if ($this->request->getMethod() == 'post') {
 			$ContactsModel->delete($id);
 		}
-
 		return redirect()->to('/phonebook/index');
-		
-
 	}
 
 	public function new()
 	{
 		$data = [];
 		helper(['form']);
-
 		if ($this->request->getMethod() == 'post') {
-
 			$model = new ContactsModel();
-
 			if ($model->save($_POST)) {
-
 				return redirect()->to('/phonebook/index');
-
 			} else{
 				$data['errors'] = $model->errors();
 			}
 		}
-		
-
 		return view('new_page' , $data);
 	}
 	
@@ -61,14 +47,11 @@ class Phonebook extends BaseController
 	public function edit($id)
 	{
 		helper('form');
-
 		$ContactsModel = new ContactsModel();
-
 		$data = [
 			'contact' => $ContactsModel->find($id),
 			'errors'  => []
 		];
-		
 		if ($this->request->getMethod() == 'post') {
 			if ($ContactsModel->update($id, $_POST)) {
 				return redirect()->to('/phonebook/index');
@@ -76,18 +59,15 @@ class Phonebook extends BaseController
 				$data['errors'] = $ContactsModel->errors();
 			}
 		}
-		
 		return view('edit_page', $data);
 	}
 
 	public function show($id)
 	{
 		$ContactsModel = new ContactsModel();
-
 		$data = [
 			'contact' => $ContactsModel->find($id)
 		];
-
 		return view('show_page', $data);
 	}
 
