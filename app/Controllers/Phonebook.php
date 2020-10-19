@@ -71,4 +71,13 @@ class Phonebook extends BaseController
 		return view('show_page', $data);
 	}
 
+	public function login(){
+		return view('login_page');
+	}
+	
+	public function register()
+	{
+		return view('register_page');
+	}
+
 }
