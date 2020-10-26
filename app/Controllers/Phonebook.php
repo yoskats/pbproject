@@ -1,5 +1,8 @@
 <?php namespace App\Controllers;
 
+
+// use App\Config\Email;
+
 use App\Models\ContactsModel;
 
 class Phonebook extends BaseController
@@ -79,5 +82,8 @@ class Phonebook extends BaseController
 	{
 		return view('register_page');
 	}
+	
+
+	
 
 }
