@@ -22,13 +22,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse col-6" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/">Phone book list<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" navbar-collapse  col-6">
+                <ul class=" navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item active ml-4">
+                        <a class="nav-link text-white" href="/login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -45,8 +55,8 @@
     <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
         <div class="button_container text-center">
             <a type="button" class="btn btn-danger" href="/edit/<?php echo $contact['id'] ?>">Edit</a>
-            <form style='display:inline;' action="/delete/<?php echo $contact['id'] ?>" method="post"> 
-                 <button type="submit" class="btn btn-danger">Delete</button>
+            <form style='display:inline;' action="/delete/<?php echo $contact['id'] ?>" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </div>
     </div>

@@ -22,13 +22,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse col-6" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/">Phone book list<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" navbar-collapse  col-6">
+                <ul class=" navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item active ml-4">
+                        <a class="nav-link text-white" href="/login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -44,14 +54,14 @@
 
 
     <div class="col-12 pb-5 col-md-8 offset-md-2 mr-4">
-        <form class="col-12 col-md-8 offset-md-2 pb-5" action="/edit/<?php echo $contact['id']?>" method="post">
-        <?php if (!empty($errors)) : ?>
-            <div class="alert alert-danger">
-                <?php foreach ($errors as $field => $error) : ?>
-                    <p><?= $error ?></p>
-                <?php endforeach ?>
-            </div>
-        <?php endif ?>
+        <form class="col-12 col-md-8 offset-md-2 pb-5" action="/edit/<?php echo $contact['id'] ?>" method="post">
+            <?php if (!empty($errors)) : ?>
+                <div class="alert alert-danger">
+                    <?php foreach ($errors as $field => $error) : ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach ?>
+                </div>
+            <?php endif ?>
             <div class="pb-5">
                 <div class="button_container text-center" style="padding-top: 30px;">
                     <button type="submit" class="btn btn-danger">Save</button>

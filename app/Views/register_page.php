@@ -20,13 +20,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse col-6" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/">Phone book list<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active ml-4">
                         <a class="nav-link  text-white" href="/new">Add new contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" navbar-collapse  col-6">
+                <ul class=" navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item active ml-4">
+                        <a class="nav-link text-white" href="/login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -42,21 +52,7 @@
     </div>
 
     <div class="col-12 col-md-8 offset-md-2 pt-5 pb-5">
-        <form action="" method="">
-
-            <div class="form-group row h4">
-                <label for="fullname" class="col-md-5 text-md-right">First Name</label>
-                <div class="col-md-4">
-                    <input type="text" id="fullname" class="form-control" name="fullname" required autofocus>
-                </div>
-            </div>
-
-            <div class="form-group row h4">
-                <label for="fullname" class="col-md-5 text-md-right">Last Name</label>
-                <div class="col-md-4">
-                    <input type="text" id="fullname" class="form-control" name="fullname" required autofocus>
-                </div>
-            </div>
+        <form action="/register" method="post">
 
             <div class="form-group row h4">
                 <label for="username" class="col-md-5 text-md-right">Username</label>
