@@ -5,35 +5,35 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-
+	
 	/**
 	 * @var string
 	 */
-	public $fromEmail = 'yosi@123code.co';
-
+	public $fromEmail = 'yoskats620@gmail.com';
+	
 	/**
 	 * @var string
 	 */
-	public $fromName = 'Josef Yosi Kats';
+	public $fromName = 'Yosi';
 	
 	/**
 	 * @var string
 	 */
 	public $recipients;
-
+	
 	/**
 	 * The "user agent"
 	 *
 	 * @var string
 	 */
 	public $userAgent = 'CodeIgniter';
-
+	
 	/**
 	 * The mail sending protocol: mail, sendmail, smtp
 	 *
 	 * @var string
 	 */
-	public $protocol = 'mail';
+	public $protocol = 'smtp';
 
 	/**
 	 * The server path to Sendmail.
@@ -68,14 +68,14 @@ class Email extends BaseConfig
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 25;
+	public $SMTPPort = 465;
 
 	/**
 	 * SMTP Timeout (in seconds)
 	 *
 	 * @var integer
 	 */
-	public $SMTPTimeout = 5;
+	public $SMTPTimeout = 20;
 
 	/**
 	 * Enable persistent SMTP connections
@@ -89,7 +89,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPCrypto = 'tls';
+	public $SMTPCrypto = 'ssl';
 
 	/**
 	 * Enable word-wrap
@@ -110,7 +110,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $mailType = 'text';
+	public $mailType = 'html';
 
 	/**
 	 * Character set (utf-8, iso-8859-1, etc.)
@@ -167,5 +167,6 @@ class Email extends BaseConfig
 	 * @var boolean
 	 */
 	public $DSN = false;
+	
 
 }
