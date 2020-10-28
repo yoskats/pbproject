@@ -20,7 +20,10 @@ class Phonebook extends BaseController
 		
 		// die(var_dump($contacts));
 
-		return view('list_page', $data);
+		echo view('templates/header',);
+		echo view('templates/navbar');
+		echo view('list_page', $data);
+		echo view('templates/footer');
 	}
 	public function delete($id){
 		$ContactsModel = new ContactsModel();
@@ -42,7 +45,10 @@ class Phonebook extends BaseController
 				$data['errors'] = $model->errors();
 			}
 		}
-		return view('new_page' , $data);
+		echo view('templates/header',);
+		echo view('templates/navbar');
+		echo view('new_page', $data);
+		echo view('templates/footer');
 	}
 	
 
@@ -62,7 +68,10 @@ class Phonebook extends BaseController
 				$data['errors'] = $ContactsModel->errors();
 			}
 		}
-		return view('edit_page', $data);
+		echo view('templates/header',);
+		echo view('templates/navbar');
+		echo view('edit_page', $data);
+		echo view('templates/footer');
 	}
 
 	public function show($id)
@@ -71,16 +80,27 @@ class Phonebook extends BaseController
 		$data = [
 			'contact' => $ContactsModel->find($id)
 		];
-		return view('show_page', $data);
+		echo view('templates/header',);
+		echo view('templates/navbar');
+		echo view('show_page',$data);
+		echo view('templates/footer');
 	}
 
 	public function login(){
-		return view('login_page');
+
+		$data = [];
+		echo view ('templates/header',);
+		echo view ('templates/navbar');
+		echo view ('login_page');
+		echo view ('templates/footer');
 	}
 	
 	public function register()
 	{
-		return view('register_page');
+		echo view('templates/header',);
+		echo view('templates/navbar');
+		echo view('register_page');
+		echo view('templates/footer');
 	}
 	
 
