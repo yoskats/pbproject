@@ -83,6 +83,16 @@ class Phonebook extends BaseController
 	{
 		return view('register_page');
 	}
+
+	public function forgot()
+	{
+		return view('forgot_pass');
+	}
+	
+	public function home()
+	{
+		return view('home_page');
+	}	
 	
 
 	
