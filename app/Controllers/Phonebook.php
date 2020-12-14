@@ -19,11 +19,7 @@ class Phonebook extends BaseController
 		$data = [
 			'contacts' => $ContactsModel->findAll()
 		];
-		// if ($this->request->getMethod() == 'post') {
-		// 	$ContactsModel->delete($id);
-		// }
-		
-		// die(var_dump($contacts));
+
 
 		return view('list_page', $data);
 	}
@@ -70,6 +66,7 @@ class Phonebook extends BaseController
 		return view('edit_page', $data);
 	}
 
+
 	public function show($id)
 	{
 		$ContactsModel = new ContactsModel();
@@ -79,15 +76,18 @@ class Phonebook extends BaseController
 		return view('show_page',$data);
 	}
 
+
 	public function login()
 	{
 		return view('login_page');
 	}
+
 	
 	public function register()
 	{
 		return view('register_page');
 	}
+	
 
 	public function forgot()
 	{

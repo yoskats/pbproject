@@ -48,11 +48,11 @@
         </div>
 
 
-        <div id="register-link" class="text-right col-md-6 offset-md-3 h5">
+        <div id="register-link" class="text-left col-md-8 offset-md-3 h5">
             <a href="/register" class="text-danger">Register here</a>
         </div>
         <?php if ($config->activeResetter) : ?>
-            <div class="text-right col-md-6 offset-md-3 h5">
+            <div class="text-left col-md-6 offset-md-3 h5">
                 <p><a class="text-danger" href="<?= route_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a></p>
             </div>
         <?php endif; ?>

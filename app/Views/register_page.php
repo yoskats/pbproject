@@ -43,7 +43,7 @@
             <button type="submit" class="btn btn-lg btn-danger">Register</button>
         </div>
 
-        <div class="col-md-6 offset-md-4 text-right h5">
+        <div class="col-md-8 text-center h5">
             <a href="/login" class="text-danger">Already Registered?</a>
         </div>
 
