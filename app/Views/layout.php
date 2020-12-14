@@ -19,7 +19,7 @@
 
     <!-- Footer -->
     <div class="footer col-12 col-md-8 offset-md-2 pt-5 bg-dark">
-        <footer class="footer" style="">
+        <footer class="footer">
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3 text-white mb-5">© 2020 Copyright saved to : <a class="text-danger text-center" href="">yosi@123code.co </a>
                 <a class="text-white text-center" href="/home"> Yosi's Phonebook</a>

@@ -9,6 +9,11 @@ class Phonebook extends BaseController
 {
 	public function index()
 	{
+		return view('home_page');
+	}	
+	
+	public function list()
+	{
 		helper('form');
 		$ContactsModel = new ContactsModel();
 		$data = [
@@ -27,7 +32,7 @@ class Phonebook extends BaseController
 		if ($this->request->getMethod() == 'post') {
 			$ContactsModel->delete($id);
 		}
-		return redirect()->to('/phonebook/index');
+		return redirect()->to('/phonebook/list');
 	}
 
 	public function new()
@@ -37,7 +42,7 @@ class Phonebook extends BaseController
 		if ($this->request->getMethod() == 'post') {
 			$model = new ContactsModel();
 			if ($model->save($_POST)) {
-				return redirect()->to('/phonebook/index');
+				return redirect()->to('/phonebook/list');
 			} else{
 				$data['errors'] = $model->errors();
 			}
@@ -57,7 +62,7 @@ class Phonebook extends BaseController
 		];
 		if ($this->request->getMethod() == 'post') {
 			if ($ContactsModel->update($id, $_POST)) {
-				return redirect()->to('/phonebook/index');
+				return redirect()->to('/phonebook/list');
 			} else {
 				$data['errors'] = $ContactsModel->errors();
 			}
@@ -89,10 +94,6 @@ class Phonebook extends BaseController
 		return view('forgot_pass');
 	}
 	
-	public function home()
-	{
-		return view('home_page');
-	}	
 	
 
 	
