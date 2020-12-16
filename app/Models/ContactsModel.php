@@ -12,7 +12,7 @@ class ContactsModel extends Model
     // protected $returnType     = 'array';
     // protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'phone', 'email', 'bday'];
+    protected $allowedFields = ['user_id', 'name', 'phone', 'email', 'bday'];
 
    // protected $useTimestamps = true;
 

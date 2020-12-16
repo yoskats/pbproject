@@ -14,6 +14,8 @@
 	</div>
 </div>
 
+<?php var_dump(user());?>
+
 <div class="table_1 col-12 col-md-8 offset-md-2 pt-5 pb-5">
 	<div class="table_container pb-5">
 		<table class="table contacts">

@@ -22,6 +22,12 @@
             <div class="col">
 
                 <div class="row">
+                    <div class="col" style="padding-bottom: 30px;">
+                        <input type="hidden" class="form-control h3" name="user_id" id="user_id"  value="<?php echo user_id(); ?>">
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col" style="padding-bottom: 30px; padding-top: 8px;">
                         <label class="h3">Full name</label>
                     </div>

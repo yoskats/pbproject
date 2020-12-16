@@ -8,6 +8,10 @@ class AddContacts extends Migration
         public function up()
         {
                 $this->forge->addField([
+                        'user_id'     =>[
+                                'type'           => 'INT',
+                                'constraint'     => 10,
+                        ],
                         'id'          => [
                                 'type'           => 'INT',
                                 'constraint'     => 5,

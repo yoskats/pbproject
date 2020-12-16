@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-light">
-
+    <?php helper('auth');?>
     <?= view('Views\navbar') ?>
     <?= $this->renderSection('main') ?>
 

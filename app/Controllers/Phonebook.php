@@ -9,7 +9,20 @@ class Phonebook extends BaseController
 {
 	public function index()
 	{
-		return view('home_page');
+	
+
+		if (logged_in()){
+			return redirect()->to('/phonebook/list');
+		}
+		else{
+			
+			return view('home_page');
+		}
+	}
+
+	public function about()
+	{
+		return view('about_us_page');	
 	}	
 	
 	public function list()
@@ -23,6 +36,8 @@ class Phonebook extends BaseController
 
 		return view('list_page', $data);
 	}
+
+
 	public function delete($id){
 		$ContactsModel = new ContactsModel();
 		if ($this->request->getMethod() == 'post') {
@@ -77,23 +92,7 @@ class Phonebook extends BaseController
 	}
 
 
-	public function login()
-	{
-		return view('login_page');
-	}
 
-	
-	public function register()
-	{
-		return view('register_page');
-	}
-	
-
-	public function forgot()
-	{
-		return view('forgot_pass');
-	}
-	
 	
 
 	

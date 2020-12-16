@@ -8,7 +8,7 @@
 </div>
 
 <div class="col-12 col-md-8 offset-md-2 pt-5 pb-5">
-    <form action="<?php route_to('register') ?>" method="post">
+    <form action=" <?php route_to('register') ?>" method="post">
         <?= view('Views\message') ?>
 
         <div class="form-group row h4">
