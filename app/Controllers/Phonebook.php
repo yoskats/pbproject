@@ -9,32 +9,37 @@ class Phonebook extends BaseController
 {
 	public function index()
 	{
-	
-
 		if (logged_in()){
-			return redirect()->to('/phonebook/list');
+			return redirect()->to('/list');
 		}
 		else{
-			
 			return view('home_page');
 		}
 	}
 
 	public function about()
 	{
-		return view('about_us_page');	
+		if (logged_in()) {
+			return redirect()->to('/list');
+		} else {
+			return view('about_us_page');	
+		}
 	}	
 	
 	public function list()
 	{
-		helper('form');
-		$ContactsModel = new ContactsModel();
-		$data = [
-			'contacts' => $ContactsModel->findAll()
-		];
+		if (logged_in()){
+			helper('form');
+			$ContactsModel = new ContactsModel();
+			$data = [
+				'contacts' => $ContactsModel->where('user_id' , user_id())->findAll()
+			];
 
+			return view('list_page', $data);
+		} else{
+			return redirect()->to('/');	
 
-		return view('list_page', $data);
+		}
 	}
 
 
@@ -43,52 +48,70 @@ class Phonebook extends BaseController
 		if ($this->request->getMethod() == 'post') {
 			$ContactsModel->delete($id);
 		}
-		return redirect()->to('/phonebook/list');
+		return redirect()->to('/list');
 	}
 
 	public function new()
 	{
-		$data = [];
-		helper(['form']);
-		if ($this->request->getMethod() == 'post') {
-			$model = new ContactsModel();
-			if ($model->save($_POST)) {
-				return redirect()->to('/phonebook/list');
-			} else{
-				$data['errors'] = $model->errors();
+		if (logged_in()) {
+			$data = [];
+			helper(['form']);
+			if ($this->request->getMethod() == 'post') {
+				$model = new ContactsModel();
+				if ($model->save($_POST)) {
+					return redirect()->to('/list');
+				} else{
+					$data['errors'] = $model->errors();
+				}
 			}
+			return view('new_page', $data);
+		}else{
+			return redirect()->to('/');	
 		}
-		return view('new_page', $data);
 	}
 	
 
 
 	public function edit($id)
 	{
-		helper('form');
-		$ContactsModel = new ContactsModel();
-		$data = [
-			'contact' => $ContactsModel->find($id),
-			'errors'  => []
-		];
-		if ($this->request->getMethod() == 'post') {
-			if ($ContactsModel->update($id, $_POST)) {
+		if (logged_in()){
+			helper('form');
+			$ContactsModel = new ContactsModel();
+			$data = [
+				'contact' => $ContactsModel->find($id),
+				'errors'  => []
+			];
+
+			if ($data['contact']['user_id'] !== user_id()){
 				return redirect()->to('/phonebook/list');
-			} else {
-				$data['errors'] = $ContactsModel->errors();
 			}
+
+			if ($this->request->getMethod() == 'post') {
+				if ($ContactsModel->update($id, $_POST)) {
+					return redirect()->to('/phonebook/list');
+				} else {
+					$data['errors'] = $ContactsModel->errors();
+				}
+			}
+			return view('edit_page', $data);
+		} else{
+			return redirect()->to('/');	
+
 		}
-		return view('edit_page', $data);
 	}
 
 
 	public function show($id)
 	{
-		$ContactsModel = new ContactsModel();
-		$data = [
-			'contact' => $ContactsModel->find($id)
-		];
-		return view('show_page',$data);
+		if (logged_in()){
+			$ContactsModel = new ContactsModel();
+			$data = [
+				'contact' => $ContactsModel->find($id)
+			];
+			return view('show_page',$data);
+		} else{
+			return redirect()->to('/');	
+		}
 	}
 
 
