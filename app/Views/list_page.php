@@ -29,9 +29,10 @@
 					</tr>
 				</thead>
 				<tbody>
+					<?php $contact_index = 1;?>
 					<?php foreach ($contacts as $contact) : ?>
 						<tr class="bg-secondary text-white">
-							<td class="h4 text-center"> <?php echo $contact['id'] ?> </td>
+							<td class="h4 text-center"> <?php echo $contact_index; $contact_index++ ?> </td>
 							<td class="h4 text-center"><a href="show/<?php echo $contact['id'] ?>" class=" text-light"> <?php echo $contact['name'] ?> </a></td>
 							<td class="h4 text-center"> <?php echo $contact['phone'] ?> </td>
 							<td class="h4 text-center"> <?php echo $contact['email'] ?> </td>

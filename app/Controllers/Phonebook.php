@@ -83,12 +83,12 @@ class Phonebook extends BaseController
 			];
 
 			if ($data['contact']['user_id'] !== user_id()){
-				return redirect()->to('/phonebook/list');
+				return redirect()->to('/list');
 			}
 
 			if ($this->request->getMethod() == 'post') {
 				if ($ContactsModel->update($id, $_POST)) {
-					return redirect()->to('/phonebook/list');
+					return redirect()->to('/list');
 				} else {
 					$data['errors'] = $ContactsModel->errors();
 				}
@@ -108,6 +108,9 @@ class Phonebook extends BaseController
 			$data = [
 				'contact' => $ContactsModel->find($id)
 			];
+				if ($data['contact']['user_id'] !== user_id()){
+				return redirect()->to('/list');
+			}
 			return view('show_page',$data);
 		} else{
 			return redirect()->to('/');	
