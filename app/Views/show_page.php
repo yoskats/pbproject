@@ -42,7 +42,7 @@
 
                     <div class="row">
                         <div class="col pl-5 border-left border-right border-danger">
-                            <label class="h3"><?php echo $contact['email'] ?></label>
+                            <label class="h3">Email</label>
                         </div>
                         <div class="col p-0 ml-5 border-right border-danger">
                             <p class="h3 text-muted"><?php echo $contact['email'] ?></p>
