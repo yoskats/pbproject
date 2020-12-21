@@ -21,8 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	// public $baseURL = $_ENV['APP_BASEURL'];
-	// public $baseURL = getenv('APP_BASEURL');
+
 	public $baseURL = '';
 
 	/*
@@ -35,7 +34,7 @@ class App extends BaseConfig
 	| variable so that it is blank.
 	|
 	*/
-	public $indexPage = '';
+	public $indexPage = 'index.php';
 
 	/*
 	|--------------------------------------------------------------------------
