@@ -23,7 +23,7 @@ class App extends BaseConfig
 	*/
 	// public $baseURL = $_ENV['APP_BASEURL'];
 	// public $baseURL = getenv('APP_BASEURL');
-	public $baseURL = '';
+	public $baseURL = 'http://localhost:8888/';
 
 	/*
 	|--------------------------------------------------------------------------
