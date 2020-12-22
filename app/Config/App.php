@@ -22,7 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 
-	public $baseURL = '';
+	public $baseURL = 'https://phonebookyjk.herokuapp.com/';
 
 	/*
 	|--------------------------------------------------------------------------
