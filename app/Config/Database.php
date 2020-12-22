@@ -32,11 +32,11 @@ class Database extends \CodeIgniter\Database\Config
 	
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'ec2-54-236-122-55.compute-1.amazonaws.com',
-		'username' => 'clsomprqmsxryg',
-		'password' => '9c82ff36994eb824ba273ec5f55880704c6a4b9522c5e0f9e3c724d62a139a7d',
-		'database' => 'ddcis86vmqaeib',
-		'DBDriver' => 'Postgre',
+		'hostname' => '127.0.0.1',
+		'username' => '',
+		'password' => '',
+		'database' => '',
+		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -85,6 +85,12 @@ class Database extends \CodeIgniter\Database\Config
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->default['hostname'] = getenv('DB_HOST');
+		$this->default['database'] = getenv('DB_NAME');
+		$this->default['username'] = getenv('DB_USER');
+		$this->default['password'] = getenv('DB_PASS');
+		$this->default['DBDriver'] = getenv('DB_DRIVER');
 
 		// Ensure that we always set the database group to 'tests' if
 		// we are currently running an automated test suite, so that
