@@ -31,11 +31,11 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => '',
-		'username' => '',
-		'password' => '',
-		'database' => 'ci4',
-		'DBDriver' => 'MySQLi',
+		'hostname' => 'ec2-54-236-122-55.compute-1.amazonaws.com',
+		'username' => 'clsomprqmsxryg',
+		'password' => '9c82ff36994eb824ba273ec5f55880704c6a4b9522c5e0f9e3c724d62a139a7d',
+		'database' => 'ddcis86vmqaeib',
+		'DBDriver' => 'Postgre',
 		'DBPrefix' => '',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
