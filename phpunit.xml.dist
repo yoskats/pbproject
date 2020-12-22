@@ -39,7 +39,7 @@
 		<server name="app.baseURL" value="http://example.com"/>
 
 		<!-- Directory containing phpunit.xml -->
-		<const name="HOMEPATH" value="./"/>
+		<const name="HOMEPATH" value="/"/>
 
 		<!-- Directory containing the Paths config file -->
 		<const name="CONFIGPATH" value="./app/Config/"/>

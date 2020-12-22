@@ -29,6 +29,7 @@ class Database extends \CodeIgniter\Database\Config
 	 *
 	 * @var array
 	 */
+	
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'ec2-54-236-122-55.compute-1.amazonaws.com',
