@@ -7,7 +7,7 @@ use App\Models\ContactsModel;
 
 class Phonebook extends BaseController
 {
-	public function index()
+	public function home()
 	{
 		if (logged_in()){
 			return redirect()->to('/list');
