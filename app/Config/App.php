@@ -34,7 +34,7 @@ class App extends BaseConfig
 	| variable so that it is blank.
 	|
 	*/
-	public $indexPage = ' home_page.php';
+	public $indexPage = 'home_page.php';
 
 	/*
 	|--------------------------------------------------------------------------
