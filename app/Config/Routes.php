@@ -32,13 +32,13 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
-$routes->get('/', 'App\Controllers\Phonebook::index');
-$routes->get('/list', 'App\Controllers\Phonebook::list');
-$routes->post('/delete/(:num)', 'App\Controllers\Phonebook::delete/$1');
-$routes->match(['get','post'],'/new', 'App\Controllers\Phonebook::new');
-$routes->get('/show/(:num)', 'App\Controllers\Phonebook::show/$1');
-$routes->match(['get', 'post'],'/edit/(:num)', 'App\Controllers\Phonebook::edit/$1');
-$routes->get('/about', 'App\Controllers\Phonebook::about');
+$routes->get('/', '\App\Controllers\Phonebook::index');
+$routes->get('/list', '\App\Controllers\Phonebook::list');
+$routes->post('/delete/(:num)', '\App\Controllers\Phonebook::delete/$1');
+$routes->match(['get','post'],'/new', '\App\Controllers\Phonebook::new');
+$routes->get('/show/(:num)', '\App\Controllers\Phonebook::show/$1');
+$routes->match(['get', 'post'],'/edit/(:num)', '\App\Controllers\Phonebook::edit/$1');
+$routes->get('/about', '\App\Controllers\Phonebook::about');
 
 /**
  * --------------------------------------------------------------------
