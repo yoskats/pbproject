@@ -1,7 +1,7 @@
 <?php 
+namespace App\Controllers;
 
 use App\Models\ContactsModel;
-namespace App\Controllers;
 
 class Phonebook extends BaseController
 {
