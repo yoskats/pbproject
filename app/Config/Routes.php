@@ -15,7 +15,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * Router Setup
  * --------------------------------------------------------------------
  */
-$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultNamespace('');
 $routes->setDefaultController('Phonebook');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
