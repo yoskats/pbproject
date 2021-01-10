@@ -1,7 +1,5 @@
 <?php
 
-die('blah!!!!');
-
 // Valid PHP Version?
 $minPHPVersion = '7.2';
 if (phpversion() < $minPHPVersion)
@@ -17,7 +15,7 @@ define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 // This is the line that might need to be changed, depending on your folder structure.
 $pathsPath = realpath(FCPATH . '../app/Config/Paths.php');
 // ^^^ Change this if you move your application folder
-
+die(var_dump($pathsPath));
 /*
  *---------------------------------------------------------------
  * BOOTSTRAP THE APPLICATION
