@@ -16,8 +16,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('');
-$routes->setDefaultMethod('');
+$routes->setDefaultController('Phonebook');
+$routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -32,13 +32,13 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
-$routes->get('/', 'Phonebook::index');
-$routes->get('/list', 'Phonebook::list');
-$routes->post('/delete/(:num)', 'Phonebook::delete/$1');
-$routes->match(['get','post'],'/new', 'Phonebook::new');
-$routes->get('/show/(:num)', 'Phonebook::show/$1');
-$routes->match(['get', 'post'],'/edit/(:num)', 'Phonebook::edit/$1');
-$routes->get('/about', 'Phonebook::about');
+$routes->get('/','Phonebook::index');
+$routes->get('/list','Phonebook::list');
+$routes->post('/delete/(:num)','Phonebook::delete/$1');
+$routes->match(['get','post'],'/new','Phonebook::new');
+$routes->get('/show/(:num)','Phonebook::show/$1');
+$routes->match(['get', 'post'],'/edit/(:num)','Phonebook::edit/$1');
+$routes->get('/about','Phonebook::about');
 
 /**
  * --------------------------------------------------------------------
