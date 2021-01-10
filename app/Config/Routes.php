@@ -32,13 +32,13 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
-$routes->get('/','Phonebook::index');
-$routes->get('/list','Phonebook::list');
-$routes->post('/delete/(:num)','Phonebook::delete/$1');
-$routes->match(['get','post'],'/new','Phonebook::new');
-$routes->get('/show/(:num)','Phonebook::show/$1');
-$routes->match(['get', 'post'],'/edit/(:num)','Phonebook::edit/$1');
-$routes->get('/about','Phonebook::about');
+$routes->get('Phonebook/', 'Phonebook::index');
+$routes->get('Phonebook/list', 'Phonebook::list');
+$routes->post('Phonebook/delete/(:num)', 'Phonebook::delete/$1');
+$routes->match(['get','post'], 'Phonebook/new', 'Phonebook::new');
+$routes->get('Phonebook/show/(:num)', 'Phonebook::show/$1');
+$routes->match(['get', 'post'], 'Phonebook/edit/(:num)', 'Phonebook::edit/$1');
+$routes->get('Phonebook/about', 'Phonebook::about');
 
 /**
  * --------------------------------------------------------------------
