@@ -19,7 +19,7 @@
 <style>
 	.about-section {
 		margin-top: 100px;
-		margin-bottom: 200px;
+		margin-bottom: 216px;
 	}
 
 	.content-wrraper {

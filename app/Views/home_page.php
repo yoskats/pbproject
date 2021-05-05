@@ -17,13 +17,6 @@
 </div>
 
 <style>
-	html,
-	body {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-
 	.home-section {
 		margin-top: 160px;
 		margin-bottom: 180px;
