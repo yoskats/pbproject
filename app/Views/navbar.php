@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="header col-12 bg-dark mb-5">
+<div class="container navbar-wrraper bg-dark">
+    <div class="header col-12">
         <nav class="navbar navbar-expand-md navbar-light text-white">
             <a class="navbar-brand text-white" href="/">Phone Book</a>
             <button class="navbar-toggler text-white bg-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,3 +58,7 @@
         </nav>
     </div>
 </div>
+
+
+<style>
+</style>

@@ -20,11 +20,13 @@
 	html,
 	body {
 		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.home-section {
-		margin-top: 115px;
-		margin-bottom: 150px;
+		margin-top: 160px;
+		margin-bottom: 180px;
 	}
 
 	.sub-title {
@@ -33,18 +35,12 @@
 
 	@media (max-width: 1200px) {
 		.home-section {
-			margin-top: 55px;
-			margin-bottom: 95px;
+			margin-top: 110px;
+			margin-bottom: 125px;
 		}
 	}
 
 	@media (max-width: 991px) {
-
-		html,
-		body {
-			height: 80%;
-		}
-
 		.home-section {
 			margin-top: 50px;
 			margin-bottom: 100px;
@@ -52,12 +48,6 @@
 	}
 
 	@media (max-width: 768px) {
-
-		html,
-		body {
-			height: 100%;
-		}
-
 		.home-section {
 			margin-top: 35px;
 			margin-bottom: 60px;
@@ -71,6 +61,14 @@
 		.register-title,
 		.register-btn {
 			font-size: 16px;
+		}
+
+	}
+
+	@media (max-width: 600px) {
+		.home-section {
+			margin-top: 35px;
+			margin-bottom: 60px;
 		}
 
 	}
