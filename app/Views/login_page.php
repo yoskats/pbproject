@@ -1,23 +1,20 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('main') ?>
-
-    <div class="col-12 col-md-8 offset-md-2 mr-4 pt-5 pb-5">
+<div class="container login-section d-flex flex-column">
+    <div class="d-flex flex-column mx-auto col-sm-12 col-md-12 col-lg-10 col-xl-10 col-12 mr-4 py-5">
         <div class="bg-secondary">
-            <h1 class="text-light pt-5 pb-5 text-center">Login To Phonebook</h1>
+            <h1 class="login-title text-light pt-5 pb-5 text-center">Login to Phonebook</h1>
         </div>
     </div>
 
-    <div class="col-12 col-md-8 offset-md-2 pt-5 pb-5">
+    <div class="d-flex flex-column mx-auto col-sm-12 col-md-12 col-lg-10 col-xl-10 col-12 py-5">
         <form id="login-form" class="form" action="<?= route_to('login_page') ?>" method="post">
             <div class="col-md-6 offset-md-3 h5">
                 <?= view('Views\message') ?>
             </div>
-            <div class="col-md-6 offset-md-3">
-                <h3 class="text-center h2">Login</h3>
-            </div>
             <?php if ($config->validFields === ['email']) : ?>
                 <div class="form-group col-md-6 offset-md-3 h4">
-                    <label for="login" class="text"><?= lang('Auth.email') ?></label><br>
+                    <label for="login" class="log-label"><?= lang('Auth.email') ?></label><br>
                     <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
                     <div class="invalid-feedback col-md-6 offset-md-3 h4">
                         <?= session('errors.login') ?>
@@ -25,7 +22,7 @@
                 </div>
             <?php else : ?>
                 <div class="form-group col-md-6 offset-md-3 h4">
-                    <label for="login"><?= lang('Auth.emailOrUsername') ?></label>
+                    <label for="login" class="log-label"><?= lang('Auth.emailOrUsername') ?></label>
                     <input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
                     <div class="invalid-feedback col-md-6 offset-md-3 h4">
                         <?= session('errors.login') ?>
@@ -34,7 +31,7 @@
             <?php endif ?>
 
             <div class="form-group col-md-6 offset-md-3 h4">
-                <label for="password" class="text"><?= lang('Auth.password') ?></label><br>
+                <label for="password" class="log-label"><?= lang('Auth.password') ?></label><br>
                 <input type="password" name="password" id="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>">
                 <div class="invalid-feedback">
                     <?= session('errors.password') ?>
@@ -42,8 +39,8 @@
             </div>
 
 
-            <div class="form-group col-md-6 offset-md-3 text-center h4">
-                <input type="submit" name="submit" class="btn btn-danger btn-lg" value="login">
+            <div class="form-group col-12 d-flex justify-content-center h4">
+                <input type="submit" name="submit" class="mx-auto btn btn-lg py-3 btn-danger" value="login">
             </div>
 
 
@@ -55,8 +52,43 @@
                     <p><a class="text-danger" href="<?= route_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a></p>
                 </div>
             <?php endif; ?>
-
         </form>
     </div>
+</div>
+
+
+<style>
+    .login-section {
+        margin-top: 95px;
+        margin-bottom: 95px;
+    }
+
+
+    @media (max-width: 992px) {
+        .login-section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .login-section {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .log-label {
+            visibility: hidden;
+        }
+
+        .login-title {
+            font-size: 25px;
+        }
+    }
+
+    @media (max-width: 600px) {}
+</style>
+
+
 
 <?= $this->endSection() ?>

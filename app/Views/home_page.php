@@ -19,7 +19,7 @@
 <style>
 	.home-section {
 		margin-top: 160px;
-		margin-bottom: 180px;
+		margin-bottom: 173px;
 	}
 
 	.sub-title {
@@ -40,10 +40,17 @@
 		}
 	}
 
+	@media (max-width: 836px) {
+		.home-section {
+			margin-top: 120px;
+			margin-bottom: 120px;
+		}
+	}
+
 	@media (max-width: 768px) {
 		.home-section {
-			margin-top: 35px;
-			margin-bottom: 60px;
+			margin-top: 80px;
+			margin-bottom: 80px;
 		}
 
 		.title {
@@ -60,8 +67,8 @@
 
 	@media (max-width: 600px) {
 		.home-section {
-			margin-top: 35px;
-			margin-bottom: 60px;
+			margin-top: 80px;
+			margin-bottom: 80px;
 		}
 
 	}
