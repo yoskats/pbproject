@@ -15,7 +15,7 @@
 	</div>
 
 
-	<div class="table_1 table-wrraper d-flex justify-content-center mx-auto col-sm-12 col-md-10 col-lg-8 col-xl-8 col-12 py-5">
+	<div class="table_1 table-wrraper d-flex justify-content-center mx-auto col-sm-12 col-md-10 col-lg-10 col-xl-10 col-12 px-5 py-5">
 		<table class="table bg-secondary text-white">
 			<thead>
 				<tr class="bg-dark text-white">

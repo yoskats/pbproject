@@ -8,34 +8,34 @@
         </div>
     </div>
 
-    <div class="d-flex flex-column mx-auto col-sm-12 col-md-12 col-lg-10 col-xl-10 col-12 py-5">
+    <div class="d-flex flex-column justify-content-center mx-auto col-sm-12 col-md-12 col-lg-10 col-xl-10 col-12 py-5">
         <form action=" <?php route_to('register') ?>" method="post">
             <?= view('Views\message') ?>
 
-            <div class="form-group col-12 d-flex h4">
-                <label for="username" class="black-label col-5 text-right"><?= lang('Auth.username') ?></label>
-                <div class="input-wrraper col-5">
+            <div class="form-group col-12 d-flex justify-content-center h4">
+                <label for="username" class="register-lable black-label col-5 text-right"><?= lang('Auth.username') ?></label>
+                <div class="input-wrraper justify-content-center col-8 col-xl-5 col-md-5 col-sm-8">
                     <input type="text" id="username" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
                 </div>
             </div>
 
-            <div class="form-group col-12 d-flex h4">
-                <label for="email" class="black-label col-5 text-right"><?= lang('Auth.email') ?></label>
-                <div class="input-wrraper col-5">
+            <div class="form-group col-12 d-flex h4 justify-content-center">
+                <label for="email" class="register-lable black-label col-5 text-right"><?= lang('Auth.email') ?></label>
+                <div class="input-wrraper justify-content-center col-8 col-xl-5 col-md-5 col-sm-8">
                     <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
                 </div>
             </div>
 
-            <div class="form-group col-12 d-flex h4">
-                <label for="password" class="black-label col-5 text-right"><?= lang('Auth.password') ?></label>
-                <div class="input-wrraper col-5">
+            <div class="form-group col-12 d-flex h4 justify-content-center">
+                <label for="password" class="register-lable black-label col-5 text-right"><?= lang('Auth.password') ?></label>
+                <div class="input-wrraper justify-content-center col-8 col-xl-5 col-md-5 col-sm-8">
                     <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
                 </div>
             </div>
 
-            <div class="form-group col-12 d-flex h4">
-                <label for="pass_confirm" class="black-label col-5 text-right"><?= lang('Auth.repeatPassword') ?></label>
-                <div class="input-wrraper col-5">
+            <div class="form-group col-12 d-flex h4 justify-content-center">
+                <label for="pass_confirm" class="register-lable black-label col-5 text-right"><?= lang('Auth.repeatPassword') ?></label>
+                <div class="input-wrraper justify-content-center col-8 col-xl-5 col-md-5 col-sm-8">
                     <input type="password" class="form-control form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" name="pass_confirm" placeholder="<?= lang('Auth.repeatPassword') ?>" autocomplete="off">
                 </div>
             </div>
@@ -80,6 +80,10 @@
         .register-title {
             font-size: 25px;
         }
+
+        .register-lable {
+            display: none;
+        }
     }
 
     @media (max-width: 600px) {
@@ -100,6 +104,7 @@
             flex: 0 0 100%;
             max-width: 80%;
         }
+
 
     }
 </style>
